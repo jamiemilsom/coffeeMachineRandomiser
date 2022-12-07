@@ -23,18 +23,30 @@ class Drink:
 
         print(".")
 
+        print("      )  (")
+        print("     (   ) )")
+        print("      ) ( (")
+        print("    _______)_")
+        print(" .-'---------|  ")
+        print("( C|/\/\/\/\/|")
+        print(" '-./\/\/\/\/|")
+        print("   '_________'")
+        print("    '-------'")
+
+
 
 def randomDrink():
     Drink(randName,randBeans,randMilk,randSugar,randDecaff)
 
 def decaffDrink():
-    Drink(randName,randBeans,randMilk,randSugar,False)
+
+    Drink(randName,False,randMilk,randSugar,True)
 
 def noBeans():
     Drink(randName, False, randMilk, randSugar, randDecaff)
 
 def fullBeams():
-    Drink(randName, True, randMilk, randSugar, randDecaff)
+    Drink(randName, True, randMilk, randSugar, False)
 
 
 print("-------------------------------------------------------------------------------------------------------------------------------------------------------------")
@@ -47,11 +59,11 @@ print(r"     \/                       \/     \/        \/     \/     \/     \/  
 print("-------------------------------------------------------------------------------------------------------------------------------------------------------------")
 
 while True:
-    randName = random.randint(0, 8)
     randBeans = bool(random.getrandbits(1))
     randMilk = random.randint(0, 3)
     randSugar = random.randint(0, 3)
     randDecaff = bool(random.getrandbits(1))
+    randName = random.randint(0,8)
     choice = -100
     while choice > 4 or choice < 1:
         print("MENU")
