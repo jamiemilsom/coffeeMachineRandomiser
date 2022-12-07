@@ -1,0 +1,79 @@
+import random
+
+class Drink:
+
+    def __init__(self,name,beans,milk,sugar,decaff):
+
+        allDrinksNames = ["black americano", "espresso", "flat white", "cappaccino", "latte", "mocha",
+                          "double expresso", "fresh leaf tea", "hot chocolate"]
+
+        print("Try a", allDrinksNames[name], end='')
+
+        if bool(beans) == True and name != 7 and name != 8 :
+            print(" with beans",end ='')
+
+        if milk > 0 and name != 5:
+            print (",",milk,"milks",end ='')
+
+        if sugar > 0 and name != 5:
+            print(",",sugar,"sugars",end ='')
+
+        if bool(decaff) == True:
+            print(" and make it a decaff",end='')
+
+        print(".")
+
+
+def randomDrink():
+    Drink(randName,randBeans,randMilk,randSugar,randDecaff)
+
+def decaffDrink():
+    Drink(randName,randBeans,randMilk,randSugar,False)
+
+def noBeans():
+    Drink(randName, False, randMilk, randSugar, randDecaff)
+
+def fullBeams():
+    Drink(randName, True, randMilk, randSugar, randDecaff)
+
+
+print("-------------------------------------------------------------------------------------------------------------------------------------------------------------")
+print(r"              _____  _____                                     .__    .__                                          .___             .__                     ")
+print(r"  ____  _____/ ____\/ ____\____   ____     _____ _____    ____ |  |__ |__| ____   ____   ____________    ____    __| _/____   _____ |__| ______ ___________")
+print(r"_/ ___\/  _ \   __\\   __\/ __ \_/ __ \   /     \\__  \ _/ ___\|  |  \|  |/    \_/ __ \  \_  __ \__  \  /    \  / __ |/  _ \ /     \|  |/  ___// __ \_  __ \ ")
+print(r"\  \__(  <_> )  |   |  | \  ___/\  ___/  |  Y Y  \/ __ \\  \___|   Y  \  |   |  \  ___/   |  | \// __ \|   |  \/ /_/ (  <_> )  Y Y  \  |\___ \\  ___/|  | \/")
+print(r" \___  >____/|__|   |__|  \___  >\___  > |__|_|  (____  /\___  >___|  /__|___|  /\___  >  |__|  (____  /___|  /\____ |\____/|__|_|  /__/____  >\___  >__|   ")
+print(r"     \/                       \/     \/        \/     \/     \/     \/        \/     \/              \/     \/      \/            \/        \/     \/       ")
+print("-------------------------------------------------------------------------------------------------------------------------------------------------------------")
+
+while True:
+    randName = random.randint(0, 8)
+    randBeans = bool(random.getrandbits(1))
+    randMilk = random.randint(0, 3)
+    randSugar = random.randint(0, 3)
+    randDecaff = bool(random.getrandbits(1))
+    choice = -100
+    while choice > 4 or choice < 1:
+        print("MENU")
+        print("Type 1 for full random")
+        print("Type 2 for decaff")
+        print("Type 3 for no beans")
+        print("Type 4 for full beans")
+        print("-------------------------------------------------------------------------------------------------------------------------------------------------------------")
+        print("Choose wisely: ",end ='')
+        choice = int(input())
+        if choice > 4 or choice < 1:
+            print("Please type something 1-4.")
+
+    if choice == 1:
+        randomDrink()
+
+    if choice == 2:
+        decaffDrink()
+
+    if choice == 3:
+        noBeans()
+
+    if choice == 4:
+        fullBeams()
+
