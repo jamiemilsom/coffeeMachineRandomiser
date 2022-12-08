@@ -63,6 +63,10 @@ while True:
     randMilk = random.randint(0, 3)
     randSugar = random.randint(0, 3)
     randDecaff = bool(random.getrandbits(1))
+    if randBeans == True and randDecaff == True:
+        randDecaff = False
+
+
     randName = random.randint(0,8)
     choice = -100
     while choice > 4 or choice < 1:
@@ -88,4 +92,3 @@ while True:
 
     if choice == 4:
         fullBeams()
-
